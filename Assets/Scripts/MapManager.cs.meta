@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1ad9a6fc40126a24e959b8f96180e333
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tilemap: {instanceID: 0}
+  - tileData: {instanceID: 0}
+  - overlayTilemap: {instanceID: 0}
+  - newClickedTile: {fileID: 11400000, guid: b6a6987746e52f5449d586a49ed59ab6, type: 2}
+  - overlay: {fileID: 11400000, guid: ba2830e1c6bb89f4586b177855258803, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
