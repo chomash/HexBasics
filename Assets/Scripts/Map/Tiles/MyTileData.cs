@@ -8,10 +8,8 @@ using UnityEngine;
 namespace ProjectHex.Map.Tiles
 {
     [System.Serializable]
-    public struct TileData
+    public struct MyTileData
     {
-        [Required]
-        public HexDB.TileType type;
         [Required]
         public TileBonusSelf self;
         [CanBeNull]

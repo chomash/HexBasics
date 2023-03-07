@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using ProjectHex.Map.Tiles;
+using UnityEngine.Tilemaps;
 
 /// <summary>
 /// class to store all hex info
@@ -25,6 +26,8 @@ namespace ProjectHex
         public enum ResourceType { None, RawFood, Food, Junk, Energy, Tea }
         public enum TileType { Water, Beach, Plains, Forest, Mountains, Corrupted }
         public enum BuildingType { Main, Addition, Special, Undefined }
+
+        public Dictionary<TileBase, TileType> tileTypeDictionary = new();
 
         public Vector2Int[] evenRowNeighborOffset { get; private set; } = new Vector2Int[] {
             new Vector2Int(1, 0),
@@ -51,12 +54,14 @@ namespace ProjectHex
             hexDataBase.Add(new Vector2Int(coords.x, coords.y), SetHexData(coords));
         }
 
+
+        //corrupted have to be changed, need to be on another layer and work independed; spread/disappear etc
         private HexData SetHexData(Vector3Int coords)
         {
             HexData newHexData = new();
+            newHexData.type = GetTileType(coords);
+            newHexData.finalBonus = CalculateTileBonus(newHexData.type, coords);
 
-            newHexData.finalBonus = CalculateTileBonus(coords);
-            newHexData.type = GetTileDataAt(coords).type;
             newHexData.buildingKey = SetBuildingRef(coords);
 
 
@@ -89,13 +94,13 @@ namespace ProjectHex
         }
 
 
-        //corrupted have to be changed, need to be on another layer and work independed; spread/disappear etc
+
 
         #region Tile functions
-        private TileBonusFinal CalculateTileBonus(Vector3Int coords)
+        private TileBonusFinal CalculateTileBonus(TileType type, Vector3Int coords)
         {
             TileBonusFinal newFinalBonus;
-            newFinalBonus = GetTileBonusSelf(GetTileDataAt(coords).self) + GetTileBonusOthers(coords);
+            newFinalBonus = GetTileBonusSelf(GetTileData(type).self) + GetTileBonusOthers(coords);
 
 
             return ClampTileBonus(newFinalBonus, MapManager.Instance.tileBonusFinalMin, MapManager.Instance.tileBonusFinalMax);
@@ -119,17 +124,43 @@ namespace ProjectHex
             TileBonusFinal otherBonus = new();
             List<Vector3Int> neighborCoords = GetNeighborsCoords(coords);
 
-            foreach (Vector3Int v3 in neighborCoords)
+            foreach (Vector3Int pos in neighborCoords)
             {
-                if (MapManager.Instance.tileTM.GetTile(v3) != null)
+                if (MapManager.Instance.tileTM.GetTile(pos) != null)
                 {
-                    otherBonus += GetTileDataAt(v3).other;
+                    
+                    otherBonus += GetTileData(GetTileType(pos)).other;
                 }
             }
 
             return ClampTileBonus(otherBonus, MapManager.Instance.tileBonusOtherMin, MapManager.Instance.tileBonusOtherMax);
         }
 
+        public TileBonusFinal ClampTileBonus(TileBonusFinal t, int min, int max)
+        {
+            TileBonusFinal other = new();
+
+            other.nature = Mathf.Clamp(t.nature, min, max);
+            other.sun = Mathf.Clamp(t.sun, min, max);
+            other.water = Mathf.Clamp(t.water, min, max);
+            other.punk = Mathf.Clamp(t.punk, min, max);
+            other.corruption = Mathf.Clamp(t.corruption, min, max);
+
+            return other;
+        }
+
+        private TileType GetTileType(Vector3Int coords)
+        {
+            tileTypeDictionary.TryGetValue(MapManager.Instance.tileTM.GetTile(coords), out TileType type);
+            return type;
+        }
+
+        private MyTileData GetTileData(TileType type)
+        {
+            MapManager.Instance.tileDB.tileDataBase.TryGetValue(type, out MyTileData tileData);
+            return tileData;
+        }
+        
         private List<Vector3Int> GetNeighborsCoords(Vector3Int coords)
         {
             List<Vector3Int> neighborCoords = new();
@@ -148,25 +179,6 @@ namespace ProjectHex
                 }
             }
             return neighborCoords;
-        }
-
-        public TileBonusFinal ClampTileBonus(TileBonusFinal t, int min, int max)
-        {
-            TileBonusFinal other = new();
-
-            other.nature = Mathf.Clamp(t.nature, min, max);
-            other.sun = Mathf.Clamp(t.sun, min, max);
-            other.water = Mathf.Clamp(t.water, min, max);
-            other.punk = Mathf.Clamp(t.punk, min, max);
-            other.corruption = Mathf.Clamp(t.corruption, min, max);
-
-            return other;
-        }
-
-        private TileData GetTileDataAt(Vector3Int coords)
-        {
-            MapManager.Instance.tileDB.tileDataBase.TryGetValue(MapManager.Instance.tileTM.GetTile(coords).name, out TileData tileData);
-            return tileData;
         }
         #endregion
 

@@ -31,11 +31,6 @@ namespace ProjectHex.Map.Building
         [FoldoutGroup("Split/$Name", false), HideReferenceObjectPicker]
         public Dictionary<HexDB.ResourceType, ResourceProduction> resourceProduction = new();
 
-
-        //public BuildingYield yieldBaseAmount;
-        [FoldoutGroup("Split/$Name", false)]
-        //public TileBonusEfficiency bonusEfficiency;
-
         [HideInInspector]
         public string tileBasePath;
 

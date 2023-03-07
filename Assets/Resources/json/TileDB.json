@@ -1,30 +1,111 @@
 {
-  "tile_beach": {
-    "type": 1,
+  "Water": {
     "self": {
       "nature": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      },
+      "sun": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      },
+      "water": {
+        "x": 3,
+        "y": 6,
+        "magnitude": 6.708204,
+        "sqrMagnitude": 45
+      },
+      "punk": {
         "x": 0,
         "y": 0,
         "magnitude": 0.0,
         "sqrMagnitude": 0
       },
+      "corruption": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    "other": {
+      "nature": 0,
+      "sun": 2,
+      "water": 2,
+      "punk": 1,
+      "corruption": 0
+    }
+  },
+  "Beach": {
+    "self": {
+      "nature": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      },
       "sun": {
+        "x": 3,
+        "y": 6,
+        "magnitude": 6.708204,
+        "sqrMagnitude": 45
+      },
+      "water": {
+        "x": 0,
+        "y": 2,
+        "magnitude": 2.0,
+        "sqrMagnitude": 4
+      },
+      "punk": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      },
+      "corruption": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    "other": {
+      "nature": 0,
+      "sun": 2,
+      "water": 0,
+      "punk": 0,
+      "corruption": 0
+    }
+  },
+  "Plains": {
+    "self": {
+      "nature": {
         "x": 1,
         "y": 4,
         "magnitude": 4.12310553,
         "sqrMagnitude": 17
       },
+      "sun": {
+        "x": 1,
+        "y": 3,
+        "magnitude": 3.1622777,
+        "sqrMagnitude": 10
+      },
       "water": {
         "x": 0,
-        "y": 1,
-        "magnitude": 1.0,
-        "sqrMagnitude": 1
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
       },
       "punk": {
         "x": 0,
-        "y": 2,
-        "magnitude": 2.0,
-        "sqrMagnitude": 4
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
       },
       "corruption": {
         "x": 0,
@@ -36,97 +117,94 @@
     "other": {
       "nature": 0,
       "sun": 1,
+      "water": 2,
+      "punk": 0,
+      "corruption": 0
+    }
+  },
+  "Forest": {
+    "self": {
+      "nature": {
+        "x": 3,
+        "y": 6,
+        "magnitude": 6.708204,
+        "sqrMagnitude": 45
+      },
+      "sun": {
+        "x": 1,
+        "y": 1,
+        "magnitude": 1.41421354,
+        "sqrMagnitude": 2
+      },
+      "water": {
+        "x": 1,
+        "y": 3,
+        "magnitude": 3.1622777,
+        "sqrMagnitude": 10
+      },
+      "punk": {
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
+      },
+      "corruption": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    "other": {
+      "nature": 0,
+      "sun": -1,
       "water": -1,
-      "punk": 1,
+      "punk": 0,
       "corruption": 0
     }
   },
-  "tile_corrupted": {
-    "type": 5,
+  "Mountains": {
     "self": {
       "nature": {
         "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
       },
       "sun": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
+        "x": 3,
+        "y": 4,
+        "magnitude": 5.0,
+        "sqrMagnitude": 25
       },
       "water": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
+        "x": 1,
+        "y": 2,
+        "magnitude": 2.236068,
+        "sqrMagnitude": 5
       },
       "punk": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
+        "x": 3,
+        "y": 6,
+        "magnitude": 6.708204,
+        "sqrMagnitude": 45
       },
       "corruption": {
-        "x": 1,
-        "y": 6,
-        "magnitude": 6.08276272,
-        "sqrMagnitude": 37
+        "x": 0,
+        "y": 1,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1
       }
     },
     "other": {
       "nature": 0,
-      "sun": 0,
-      "water": 0,
-      "punk": 0,
-      "corruption": 1
-    }
-  },
-  "tile_forest": {
-    "type": 3,
-    "self": {
-      "nature": {
-        "x": 1,
-        "y": 6,
-        "magnitude": 6.08276272,
-        "sqrMagnitude": 37
-      },
-      "sun": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "water": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "punk": {
-        "x": 0,
-        "y": 3,
-        "magnitude": 3.0,
-        "sqrMagnitude": 9
-      },
-      "corruption": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      }
-    },
-    "other": {
-      "nature": 1,
-      "sun": -1,
+      "sun": -2,
       "water": 0,
       "punk": 0,
       "corruption": 0
     }
   },
-  "tile_mountains": {
-    "type": 4,
+  "Corrupted": {
     "self": {
       "nature": {
         "x": 0,
@@ -136,119 +214,35 @@
       },
       "sun": {
         "x": 0,
-        "y": 1,
-        "magnitude": 1.0,
-        "sqrMagnitude": 1
-      },
-      "water": {
-        "x": 1,
-        "y": 3,
-        "magnitude": 3.1622777,
-        "sqrMagnitude": 10
-      },
-      "punk": {
-        "x": 2,
-        "y": 6,
-        "magnitude": 6.3245554,
-        "sqrMagnitude": 40
-      },
-      "corruption": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      }
-    },
-    "other": {
-      "nature": 0,
-      "sun": -1,
-      "water": 0,
-      "punk": 1,
-      "corruption": 0
-    }
-  },
-  "tile_plains": {
-    "type": 2,
-    "self": {
-      "nature": {
-        "x": 1,
-        "y": 3,
-        "magnitude": 3.1622777,
-        "sqrMagnitude": 10
-      },
-      "sun": {
-        "x": 2,
-        "y": 4,
-        "magnitude": 4.472136,
-        "sqrMagnitude": 20
+        "y": 2,
+        "magnitude": 2.0,
+        "sqrMagnitude": 4
       },
       "water": {
         "x": 0,
-        "y": 1,
-        "magnitude": 1.0,
-        "sqrMagnitude": 1
+        "y": 2,
+        "magnitude": 2.0,
+        "sqrMagnitude": 4
       },
       "punk": {
         "x": 0,
-        "y": 1,
-        "magnitude": 1.0,
-        "sqrMagnitude": 1
+        "y": 2,
+        "magnitude": 2.0,
+        "sqrMagnitude": 4
       },
       "corruption": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      }
-    },
-    "other": {
-      "nature": 0,
-      "sun": 1,
-      "water": 0,
-      "punk": 0,
-      "corruption": 0
-    }
-  },
-  "tile_water": {
-    "type": 0,
-    "self": {
-      "nature": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "sun": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "water": {
         "x": 4,
         "y": 6,
         "magnitude": 7.21110249,
         "sqrMagnitude": 52
-      },
-      "punk": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "corruption": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
       }
     },
     "other": {
-      "nature": 0,
-      "sun": 0,
-      "water": 1,
-      "punk": 0,
-      "corruption": 0
+      "nature": -1,
+      "sun": -1,
+      "water": -1,
+      "punk": -1,
+      "corruption": 2
     }
   }
 }

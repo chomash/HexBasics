@@ -15,8 +15,8 @@ namespace ProjectHex
     public class TileDB : SerializedScriptableObject
     {
      
-        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.ExpandedFoldout), PropertyOrder(10)]
-        public Dictionary<string, TileData> tileDataBase = new();
+        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.ExpandedFoldout), PropertyOrder(10), HideReferenceObjectPicker]
+        public Dictionary<HexDB.TileType, MyTileData> tileDataBase = new();
 
         #region Save & Load
         private static string directory = "/Resources/json/";
@@ -46,7 +46,7 @@ namespace ProjectHex
             if (File.Exists(fullPath))
             {
                 string json = File.ReadAllText(fullPath);
-                tileDataBase = JsonConvert.DeserializeObject<Dictionary<string, TileData>>(json);
+                tileDataBase = JsonConvert.DeserializeObject<Dictionary<HexDB.TileType, MyTileData>>(json);
             }
             else
             {
