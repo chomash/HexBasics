@@ -90,10 +90,10 @@
         "sqrMagnitude": 17
       },
       "sun": {
-        "x": 1,
-        "y": 3,
-        "magnitude": 3.1622777,
-        "sqrMagnitude": 10
+        "x": 3,
+        "y": 4,
+        "magnitude": 5.0,
+        "sqrMagnitude": 25
       },
       "water": {
         "x": 0,
@@ -131,10 +131,10 @@
         "sqrMagnitude": 45
       },
       "sun": {
-        "x": 1,
-        "y": 1,
-        "magnitude": 1.41421354,
-        "sqrMagnitude": 2
+        "x": 2,
+        "y": 2,
+        "magnitude": 2.828427,
+        "sqrMagnitude": 8
       },
       "water": {
         "x": 1,

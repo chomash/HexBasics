@@ -1,14 +1,14 @@
 {
-  "farmPlains1": {
+  "farmBuilding1": {
     "buildingName": "Farm",
     "buildingType": 0,
     "resourceProduction": {
       "RawFood": {
         "baseAmount": 5,
         "tileBonusEfficiency": {
-          "nature": 0.996,
-          "sun": 0.18,
-          "water": 0.221,
+          "nature": 0.48,
+          "sun": 0.13,
+          "water": 0.1,
           "punk": 0.0,
           "corruption": 0.0
         }
@@ -17,13 +17,64 @@
         "baseAmount": 4,
         "tileBonusEfficiency": {
           "nature": 0.0,
-          "sun": 0.517,
-          "water": 0.171,
+          "sun": 0.42,
+          "water": 0.12,
           "punk": 0.0,
           "corruption": 0.0
         }
       }
     },
     "tileBasePath": "Assets/Art/TileMaps/buildings/farmBuilding2.asset"
+  },
+  "energyBuilding1": {
+    "buildingName": "Solar Panels",
+    "buildingType": 0,
+    "resourceProduction": {
+      "Energy": {
+        "baseAmount": 6,
+        "tileBonusEfficiency": {
+          "nature": 0.0,
+          "sun": 0.58,
+          "water": 0.14,
+          "punk": 0.0,
+          "corruption": 0.0
+        }
+      }
+    },
+    "tileBasePath": "Assets/Art/TileMaps/buildings/energyBuilding1.asset"
+  },
+  "farmPlains1": {
+    "buildingName": "Farm Fields",
+    "buildingType": 1,
+    "resourceProduction": {
+      "RawFood": {
+        "baseAmount": 1,
+        "tileBonusEfficiency": {
+          "nature": 0.66,
+          "sun": 0.55,
+          "water": 0.2,
+          "punk": 0.0,
+          "corruption": 0.0
+        }
+      }
+    },
+    "tileBasePath": "Assets/Art/TileMaps/buildings/farmPlains1.asset"
+  },
+  "foodBuilding1": {
+    "buildingName": "Kitchen",
+    "buildingType": 0,
+    "resourceProduction": {
+      "Food": {
+        "baseAmount": 6,
+        "tileBonusEfficiency": {
+          "nature": 0.05,
+          "sun": 0.24,
+          "water": 0.08,
+          "punk": 0.26,
+          "corruption": 0.0
+        }
+      }
+    },
+    "tileBasePath": "Assets/Art/TileMaps/buildings/foodBuilding1.asset"
   }
 }

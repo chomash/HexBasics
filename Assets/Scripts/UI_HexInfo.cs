@@ -9,6 +9,8 @@ using System.Linq.Expressions;
 using ProjectHex.Map;
 using ProjectHex.Map.Building;
 using ProjectHex.Map.Tiles;
+using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 //using UnityEngine.UIElements;
 namespace ProjectHex.UI
@@ -26,13 +28,16 @@ namespace ProjectHex.UI
         [FoldoutGroup("Buildings", false)]
         [SerializeField] GameObject buildingInfo;
         [FoldoutGroup("Buildings", false)]
-        [SerializeField] private GameObject rawFood, food, junk, power, tea;
+        [SerializeField] private List<GameObject> resourcesProduction = new();
 
         public void UpdateHexInfo(HexData hexData, Vector3Int position)
         {
-            if (hexData.buildingReference != new Vector3Int(2137, 2137, 2137))
+            if (hexData.buildingReference != new Vector3Int(666, 666, 666))
             {
-                //UpdateBuildingInfo(hexData.buildingKey);
+                DeactivateAllResources();
+                buildingInfo.SetActive(true);
+                UpdateBuildingInfo(GetBuildingReference(position));
+                buildingImage.sprite = MapManager.Instance.buildingTM.GetSprite(position);
             }
             else
             {
@@ -51,55 +56,40 @@ namespace ProjectHex.UI
             corruptionValue.text = hexData.finalBonus.corruption.ToString();
         }
 
-        /* solid refactor needed
-        private void UpdateBuildingInfo(Vector3Int coords)
+        private void DeactivateAllResources()
         {
-            buildingInfo.SetActive(true);
-            FinalBuilding buildingRef = MapManager.Instance._buildingDB.GetBuildingData(coords);
-            buildingImage.sprite = MapManager.Instance.buildingTM.GetSprite(coords);
-            hexName.text = buildingRef.buildingName;
-
-            if (buildingRef.yieldFinalAmount.rawFood == 0)
-                rawFood.SetActive(false);
-            else
+            foreach (GameObject obj in resourcesProduction)
             {
-                rawFood.SetActive(true);
-                rawFood.transform.GetChild(0).GetComponent<TMP_Text>().text = buildingRef.yieldFinalAmount.rawFood.ToString();
-            }
-
-            if (buildingRef.yieldFinalAmount.food == 0)
-                food.SetActive(false);
-            else
-            {
-                food.SetActive(true);
-                food.transform.GetChild(0).GetComponent<TMP_Text>().text = buildingRef.yieldFinalAmount.food.ToString();
-            }
-
-            if (buildingRef.yieldFinalAmount.junk == 0)
-                junk.SetActive(false);
-            else
-            {
-                junk.SetActive(true);
-                junk.transform.GetChild(0).GetComponent<TMP_Text>().text = buildingRef.yieldFinalAmount.junk.ToString();
-            }
-
-            if (buildingRef.yieldFinalAmount.energy == 0)
-                power.SetActive(false);
-            else
-            {
-                power.SetActive(true);
-                power.transform.GetChild(0).GetComponent<TMP_Text>().text = buildingRef.yieldFinalAmount.energy.ToString();
-            }
-
-            if (buildingRef.yieldFinalAmount.tea == 0)
-                tea.SetActive(false);
-            else
-            {
-                tea.SetActive(true);
-                tea.transform.GetChild(0).GetComponent<TMP_Text>().text = buildingRef.yieldFinalAmount.tea.ToString();
+                obj.SetActive(false);
             }
         }
-        */
+        
+        private FinalBuilding GetBuildingReference(Vector3Int key)
+        {
+            MapManager.Instance._buildingDB.buildingDataBase.TryGetValue(key, out var buildingInfo);
+            return buildingInfo;
+        }
+
+        private void UpdateBuildingInfo(FinalBuilding building)
+        {
+            hexName.text = building.buildingName;
+            foreach(var prod in building.finalProduction)
+            {
+                for(int i = 0; i < resourcesProduction.Count; i++)
+                {
+                    if (resourcesProduction[i].name == prod.Key.ToString())
+                    {
+                        resourcesProduction[i].SetActive(true);
+                        resourcesProduction[i].transform.GetChild(0).GetComponent<TMP_Text>().text = prod.Value.ToString();
+                    }
+                    
+                }
+
+
+            }
+
+        }
+
     }
 }
 

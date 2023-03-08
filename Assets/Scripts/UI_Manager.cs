@@ -10,7 +10,7 @@ namespace ProjectHex.UI
 {
     public class UI_Manager : MonoBehaviour
     {
-        public static UI_Manager instance { get; private set; }
+        public static UI_Manager Instance { get; private set; }
 
         [Required]
         [SerializeField]
@@ -30,13 +30,13 @@ namespace ProjectHex.UI
 
         private void Singleton()
         {
-            if (instance != null && instance != this)
+            if (Instance != null && Instance != this)
             {
                 Destroy(this);
             }
             else
             {
-                instance = this;
+                Instance = this;
             }
         }
     }

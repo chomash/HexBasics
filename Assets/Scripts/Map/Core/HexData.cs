@@ -9,11 +9,15 @@ namespace ProjectHex
     [System.Serializable, HideReferenceObjectPicker]
     public class HexData
     {
-        public TileBonusFinal finalBonus;
         public HexDB.TileType type;
 
         [HideInInspector] public bool isBuilt = false;
         [ShowIf("isBuilt")] public Vector3Int buildingReference;
+        
+        public TileBonusFinal finalBonus;
+
+
+
     }
 }
 

@@ -44,6 +44,7 @@ namespace ProjectHex.Map.Building
             }
 
         }
+        
         private float CalculateSingleProduction(TileBonusFinal tileBonus, ResourceProduction resourceProduction)
         {
             float bonusCoefficient = CalculateTileCoefficient(tileBonus, resourceProduction.tileBonusEfficiency);
@@ -54,7 +55,6 @@ namespace ProjectHex.Map.Building
 
             return finalProduction;
         }
-
 
         private float CalculateTileCoefficient(TileBonusFinal tileBonus, ElementEfficiency efficiency)
         {
@@ -69,8 +69,6 @@ namespace ProjectHex.Map.Building
             return natureBonus + sunBonus + waterBonus + punkBonus + corrBonus;
 
         }
-
-
 
 
         private float roundtofourth(float x)

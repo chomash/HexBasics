@@ -28,8 +28,8 @@ namespace ProjectHex
         [FoldoutGroup("DataBase", false)]
         public BuildingDB _buildingDB;
 
+        [InfoBox("Use with Caution! This will change how building bonuses are calculated. Default value is: 1")]
         public float maximumTileBonusCoefficient = 1f; // for simplicity sake, do not touch
-
         public TileBase overlayTile; //how overlay should look
 
         [FoldoutGroup("TileBonusClamp", false)]
@@ -44,8 +44,16 @@ namespace ProjectHex
         [HorizontalGroup("TileBonusClamp/2", LabelWidth = 200)]
         public int tileBonusOtherMax = 4;
 
-
-        [SerializeField] private bool cleanStart = true;
+    
+        [SerializeField, FoldoutGroup("GenerationSettings")] private bool cleanStart = true;
+        [SerializeField, FoldoutGroup("GenerationSettings")] private bool randomizeSeed = true;
+        [SerializeField, FoldoutGroup("GenerationSettings")] private int seed;
+        [SerializeField, FoldoutGroup("GenerationSettings"), Button]
+        private void RegenerateWorld()
+        {
+            cleanStart = true;
+            GenerateWorld();
+        }
         #endregion
 
         private void Awake()
@@ -55,13 +63,8 @@ namespace ProjectHex
 
         public void Start()
         {
-            if (cleanStart)
-            {
-                _hexDB.hexDataBase.Clear();
-                _buildingDB.buildingDataBase.Clear();
-                Initialize();
-                cleanStart = false;
-            }
+            GenerateWorld();
+            cleanStart = false;
 
         }
 
@@ -69,6 +72,22 @@ namespace ProjectHex
         {
             OnMouseClick();
             //OnMouseOver();
+        }
+
+        public void GenerateWorld()
+        {
+            if (cleanStart)
+            {
+                if (randomizeSeed)
+                {
+                    seed = (int)System.DateTime.Now.Ticks;
+                }
+                Random.InitState(seed);
+
+                _hexDB.hexDataBase.Clear();
+                _buildingDB.buildingDataBase.Clear();
+                Initialize();
+            }
         }
 
         private void Initialize() //add tile info to hextDataBase
@@ -88,7 +107,6 @@ namespace ProjectHex
             UpdateProduction();
         }
 
-
         private void UpdateProduction()
         {
             foreach(var kvp in _buildingDB.buildingDataBase)
@@ -107,7 +125,7 @@ namespace ProjectHex
 
                 _hexDB.hexDataBase.TryGetValue(gridPosition, out HexData value);
 
-                UI_Manager.instance.ShowHexInfo(value, gridPosition);
+                UI_Manager.Instance.ShowHexInfo(value, gridPosition);
 
                 HighlightNeighbours(gridPosition.x, gridPosition.y);
                 Debug.Log(gridPosition);
@@ -170,5 +188,7 @@ namespace ProjectHex
             }
         }
         #endregion
+
+
     }
 }

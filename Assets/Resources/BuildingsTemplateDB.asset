@@ -17,6 +17,9 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: e39819ad06b21d943b81e1e7908637fc, type: 2}
+    - {fileID: 11400000, guid: 653825bb70f4d3c45ad0c443fb29f15d, type: 2}
+    - {fileID: 11400000, guid: bc249bd1fd3bc0a44bb4d2b57f8fa225, type: 2}
+    - {fileID: 11400000, guid: 60afce56e7a29114ba164b643b55545a, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -35,13 +38,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 1
-      Data: farmPlains1
+      Data: farmBuilding1
     - Name: $v
       Entry: 7
       Data: 2|ProjectHex.Map.Building.BuildingTemplate, Assembly-CSharp
@@ -91,13 +94,13 @@ MonoBehaviour:
       Data: ProjectHex.Map.Tiles.ElementEfficiency, Assembly-CSharp
     - Name: nature
       Entry: 4
-      Data: 0.996
+      Data: 0.48
     - Name: sun
       Entry: 4
-      Data: 0.18
+      Data: 0.13
     - Name: water
       Entry: 4
-      Data: 0.221
+      Data: 0.1
     - Name: punk
       Entry: 4
       Data: 0
@@ -133,10 +136,10 @@ MonoBehaviour:
       Data: 0
     - Name: sun
       Entry: 4
-      Data: 0.517
+      Data: 0.42
     - Name: water
       Entry: 4
-      Data: 0.171
+      Data: 0.12
     - Name: punk
       Entry: 4
       Data: 0
@@ -160,7 +163,283 @@ MonoBehaviour:
       Data: 
     - Name: tileBasePath
       Entry: 1
-      Data: Assets/Art/TileMaps/buildings/farmBuilding1.asset
+      Data: Assets/Art/TileMaps/buildings/farmBuilding2.asset
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: energyBuilding1
+    - Name: $v
+      Entry: 7
+      Data: 7|ProjectHex.Map.Building.BuildingTemplate, Assembly-CSharp
+    - Name: buildingImage
+      Entry: 10
+      Data: 1
+    - Name: buildingName
+      Entry: 1
+      Data: Solar Panels
+    - Name: buildingType
+      Entry: 3
+      Data: 0
+    - Name: resourceProduction
+      Entry: 7
+      Data: 8|System.Collections.Generic.Dictionary`2[[ProjectHex.HexDB+ResourceType,
+        Assembly-CSharp],[ProjectHex.ResourceProduction, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 9|System.Collections.Generic.EnumEqualityComparer`1[[ProjectHex.HexDB+ResourceType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 10|ProjectHex.ResourceProduction, Assembly-CSharp
+    - Name: baseAmount
+      Entry: 3
+      Data: 6
+    - Name: tileBonusEfficiency
+      Entry: 7
+      Data: ProjectHex.Map.Tiles.ElementEfficiency, Assembly-CSharp
+    - Name: nature
+      Entry: 4
+      Data: 0
+    - Name: sun
+      Entry: 4
+      Data: 0.58
+    - Name: water
+      Entry: 4
+      Data: 0.14
+    - Name: punk
+      Entry: 4
+      Data: 0
+    - Name: corruption
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tileBasePath
+      Entry: 1
+      Data: Assets/Art/TileMaps/buildings/energyBuilding1.asset
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: farmPlains1
+    - Name: $v
+      Entry: 7
+      Data: 11|ProjectHex.Map.Building.BuildingTemplate, Assembly-CSharp
+    - Name: buildingImage
+      Entry: 10
+      Data: 2
+    - Name: buildingName
+      Entry: 1
+      Data: Farm Fields
+    - Name: buildingType
+      Entry: 3
+      Data: 1
+    - Name: resourceProduction
+      Entry: 7
+      Data: 12|System.Collections.Generic.Dictionary`2[[ProjectHex.HexDB+ResourceType,
+        Assembly-CSharp],[ProjectHex.ResourceProduction, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 13|System.Collections.Generic.EnumEqualityComparer`1[[ProjectHex.HexDB+ResourceType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 14|ProjectHex.ResourceProduction, Assembly-CSharp
+    - Name: baseAmount
+      Entry: 3
+      Data: 1
+    - Name: tileBonusEfficiency
+      Entry: 7
+      Data: ProjectHex.Map.Tiles.ElementEfficiency, Assembly-CSharp
+    - Name: nature
+      Entry: 4
+      Data: 0.66
+    - Name: sun
+      Entry: 4
+      Data: 0.55
+    - Name: water
+      Entry: 4
+      Data: 0.2
+    - Name: punk
+      Entry: 4
+      Data: 0
+    - Name: corruption
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tileBasePath
+      Entry: 1
+      Data: Assets/Art/TileMaps/buildings/farmPlains1.asset
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: foodBuilding1
+    - Name: $v
+      Entry: 7
+      Data: 15|ProjectHex.Map.Building.BuildingTemplate, Assembly-CSharp
+    - Name: buildingImage
+      Entry: 10
+      Data: 3
+    - Name: buildingName
+      Entry: 1
+      Data: Kitchen
+    - Name: buildingType
+      Entry: 3
+      Data: 0
+    - Name: resourceProduction
+      Entry: 7
+      Data: 16|System.Collections.Generic.Dictionary`2[[ProjectHex.HexDB+ResourceType,
+        Assembly-CSharp],[ProjectHex.ResourceProduction, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 17|System.Collections.Generic.EnumEqualityComparer`1[[ProjectHex.HexDB+ResourceType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 18|ProjectHex.ResourceProduction, Assembly-CSharp
+    - Name: baseAmount
+      Entry: 3
+      Data: 6
+    - Name: tileBonusEfficiency
+      Entry: 7
+      Data: ProjectHex.Map.Tiles.ElementEfficiency, Assembly-CSharp
+    - Name: nature
+      Entry: 4
+      Data: 0.05
+    - Name: sun
+      Entry: 4
+      Data: 0.24
+    - Name: water
+      Entry: 4
+      Data: 0.08
+    - Name: punk
+      Entry: 4
+      Data: 0.26
+    - Name: corruption
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tileBasePath
+      Entry: 1
+      Data: Assets/Art/TileMaps/buildings/foodBuilding1.asset
     - Name: 
       Entry: 8
       Data: 
