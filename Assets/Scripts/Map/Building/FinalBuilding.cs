@@ -61,7 +61,7 @@ namespace ProjectHex.Map.Building
             float maxTileBonusDivisiton = 1.0f / MapManager.Instance.tileBonusFinalMax;
 
             float natureBonus = tileBonus.nature * efficiency.nature * maxTileBonusDivisiton;
-            float sunBonus = tileBonus.sun * efficiency.nature * maxTileBonusDivisiton;
+            float sunBonus = tileBonus.sun * efficiency.sun * maxTileBonusDivisiton;
             float waterBonus = tileBonus.water * efficiency.water * maxTileBonusDivisiton;
             float punkBonus = tileBonus.punk * efficiency.punk * maxTileBonusDivisiton;
             float corrBonus = tileBonus.corruption * efficiency.corruption * maxTileBonusDivisiton;
