@@ -30,7 +30,7 @@ namespace ProjectHex.UI
 
         public void UpdateHexInfo(HexData hexData, Vector3Int position)
         {
-            if (hexData.buildingKey != new Vector3Int(2137, 2137, 2137))
+            if (hexData.buildingReference != new Vector3Int(2137, 2137, 2137))
             {
                 //UpdateBuildingInfo(hexData.buildingKey);
             }

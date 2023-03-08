@@ -6,7 +6,7 @@
       "RawFood": {
         "baseAmount": 5,
         "tileBonusEfficiency": {
-          "nature": 0.415,
+          "nature": 0.996,
           "sun": 0.18,
           "water": 0.221,
           "punk": 0.0,
@@ -24,6 +24,6 @@
         }
       }
     },
-    "tileBasePath": "Assets/Art/TileMaps/buildings/farmBuilding1.asset"
+    "tileBasePath": "Assets/Art/TileMaps/buildings/farmBuilding2.asset"
   }
 }

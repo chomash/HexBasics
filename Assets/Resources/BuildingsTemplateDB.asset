@@ -16,7 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: ab4b9eb6107f4b4429e18c6a19577f46, type: 2}
+    - {fileID: 11400000, guid: e39819ad06b21d943b81e1e7908637fc, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -45,7 +45,7 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 2|ProjectHex.Map.Building.BuildingTemplate, Assembly-CSharp
-    - Name: tileBase
+    - Name: buildingImage
       Entry: 10
       Data: 0
     - Name: buildingName

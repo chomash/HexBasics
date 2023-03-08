@@ -28,7 +28,7 @@ namespace ProjectHex
         [FoldoutGroup("DataBase", false)]
         public BuildingDB _buildingDB;
 
-        public float buildingBonusCoefficient = 0.5f;
+        public float maximumTileBonusCoefficient = 1f; // for simplicity sake, do not touch
 
         public TileBase overlayTile; //how overlay should look
 
@@ -84,10 +84,19 @@ namespace ProjectHex
                     }
                 }
             }
+
+            UpdateProduction();
         }
 
 
+        private void UpdateProduction()
+        {
+            foreach(var kvp in _buildingDB.buildingDataBase)
+            {
 
+                kvp.Value.UpdateProduction(_hexDB.hexDataBase[kvp.Key].finalBonus);
+            }
+        }
 
         private void OnMouseClick()
         {
@@ -96,7 +105,7 @@ namespace ProjectHex
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector3Int gridPosition = tileTM.WorldToCell(mousePosition);
 
-                _hexDB.hexDataBase.TryGetValue(new Vector2Int(gridPosition.x, gridPosition.y), out HexData value);
+                _hexDB.hexDataBase.TryGetValue(gridPosition, out HexData value);
 
                 UI_Manager.instance.ShowHexInfo(value, gridPosition);
 

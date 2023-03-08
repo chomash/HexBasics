@@ -6,6 +6,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using ProjectHex.Map.Tiles;
 using UnityEngine.Tilemaps;
+using ProjectHex.Map.Building;
+using Unity.Collections.LowLevel.Unsafe;
 
 /// <summary>
 /// class to store all hex info
@@ -16,9 +18,9 @@ namespace ProjectHex
     [CreateAssetMenu(menuName = "Data/DB/Hex")]
     public class HexDB : SerializedScriptableObject
     {
-        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.ExpandedFoldout)]
-        [ReadOnly]
-        public Dictionary<Vector2Int, HexData> hexDataBase = new();
+        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout), HideReferenceObjectPicker]
+        //[ReadOnly]
+        public Dictionary<Vector3Int, HexData> hexDataBase = new();
 
 
 
@@ -51,7 +53,7 @@ namespace ProjectHex
 
         public void AddNewHex(Vector3Int coords)
         {
-            hexDataBase.Add(new Vector2Int(coords.x, coords.y), SetHexData(coords));
+            hexDataBase.Add(coords, SetHexData(coords));
         }
 
 
@@ -61,24 +63,18 @@ namespace ProjectHex
             HexData newHexData = new();
             newHexData.type = GetTileType(coords);
             newHexData.finalBonus = CalculateTileBonus(newHexData.type, coords);
-
-            newHexData.buildingKey = SetBuildingRef(coords);
-
-
-            //TryCreateBuilding(newHexData.buildingKey, newHexData.finalBonus);
-            
+            newHexData.buildingReference = SetBuildingRef(coords);
+            newHexData.isBuilt = newHexData.buildingReference != new Vector3Int(666, 666, 666) ? true : false;
+            if(newHexData.isBuilt)
+                TryCreateBuilding(newHexData.buildingReference);
 
             return newHexData;
         }
 
-        private void TryCreateBuilding(Vector3Int buildingKey, TileBonusFinal tileBonus)
+        private void TryCreateBuilding(Vector3Int buildingKey)
         {
-            if(buildingKey != new Vector3Int(2137, 2137, 2137))
-            {
-                string buildingID = MapManager.Instance.buildingTM.GetTile(buildingKey).name;
-                MapManager.Instance._buildingDB.AddBuilding(buildingKey, buildingID, tileBonus);
-            }
-            
+            string templateKey = MapManager.Instance.buildingTM.GetTile(buildingKey).name;
+            MapManager.Instance._buildingDB.AddBuilding(buildingKey, templateKey);
         }
 
         private Vector3Int SetBuildingRef(Vector3Int coords)
@@ -89,10 +85,9 @@ namespace ProjectHex
             }
             else
             {
-                return new Vector3Int(2137, 2137, 2137);
+                return new Vector3Int(666, 666, 666);
             }
         }
-
 
 
 

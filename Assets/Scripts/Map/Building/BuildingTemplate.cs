@@ -22,7 +22,7 @@ namespace ProjectHex.Map.Building
 
         [HorizontalGroup("Split", 135), PropertyOrder(-1)]
         [PreviewField(130, Sirenix.OdinInspector.ObjectFieldAlignment.Left), HideLabel, JsonIgnore]
-        public TileBase tileBase; //image
+        public TileBase buildingImage; //image
         [FoldoutGroup("Split/$Name", false), Required]
         public string buildingName;
         [FoldoutGroup("Split/$Name", false), Required]
@@ -39,12 +39,12 @@ namespace ProjectHex.Map.Building
 
         public void GetTileBasePath()
         {
-            tileBasePath = AssetDatabase.GetAssetPath(this.tileBase);
+            tileBasePath = AssetDatabase.GetAssetPath(this.buildingImage);
         }
 
         public void LoadTileBase()
         {
-            tileBase = AssetDatabase.LoadAssetAtPath<TileBase>(tileBasePath);
+            buildingImage = AssetDatabase.LoadAssetAtPath<TileBase>(tileBasePath);
         }
     
     }
