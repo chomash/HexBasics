@@ -99,7 +99,7 @@ namespace ProjectHex
                     Vector3Int coords = new Vector3Int(x, y, 0);
                     if (tileTM.GetTile(coords) != null)
                     {
-                        _hexDB.AddNewHex(coords);
+                        _hexDB.AddNewHex(ExtensionMethods.OffsetToCube(coords));
                     }
                 }
             }
@@ -112,7 +112,7 @@ namespace ProjectHex
             foreach(var kvp in _buildingDB.buildingDataBase)
             {
 
-                kvp.Value.UpdateProduction(_hexDB.hexDataBase[kvp.Key].finalBonus);
+                kvp.Value.UpdateProduction(_hexDB.hexDataBase[ExtensionMethods.OffsetToCube(kvp.Key)].finalBonus);
             }
         }
 
@@ -123,11 +123,11 @@ namespace ProjectHex
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector3Int gridPosition = tileTM.WorldToCell(mousePosition);
 
-                _hexDB.hexDataBase.TryGetValue(gridPosition, out HexData value);
+                _hexDB.hexDataBase.TryGetValue(ExtensionMethods.OffsetToCube(gridPosition), out HexData value);
 
                 UI_Manager.Instance.ShowHexInfo(value, gridPosition);
 
-                HighlightNeighbours(gridPosition.x, gridPosition.y);
+                HighlightNeighbours(gridPosition);
                 Debug.Log(gridPosition);
             }
         }
@@ -159,31 +159,13 @@ namespace ProjectHex
 
         #region Debug Functions
 
-        private void HighlightNeighbours(int x, int y)
+        private void HighlightNeighbours(Vector3Int coords)
         {
-            List<Vector3Int> neighborCoords = new();
-            overlayTM.ClearAllTiles();
-            if (y % 2 == 0)
+            foreach (var n in ExtensionMethods.GetNeighbors(ExtensionMethods.OffsetToCube(coords)))
             {
-                foreach (Vector2Int offset in _hexDB.evenRowNeighborOffset)
+                if (tileTM.GetTile(ExtensionMethods.CubeToOffset(n)) != null)
                 {
-                    neighborCoords.Add(new Vector3Int(x + offset.x, y + offset.y, 0));
-                }
-            }
-            else
-            {
-                foreach (Vector2Int offset in _hexDB.oddRowNeighborOffset)
-                {
-                    neighborCoords.Add(new Vector3Int(x + offset.x, y + offset.y, 0));
-                }
-            }
-
-
-            foreach (Vector3Int coords in neighborCoords)
-            {
-                if (MapManager.Instance.tileTM.GetTile(coords) != null)
-                {
-                    overlayTM.SetTile(coords, overlayTile);
+                    overlayTM.SetTile(ExtensionMethods.CubeToOffset(n), overlayTile);
                 }
             }
         }

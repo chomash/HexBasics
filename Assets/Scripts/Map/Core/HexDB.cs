@@ -18,9 +18,10 @@ namespace ProjectHex
     [CreateAssetMenu(menuName = "Data/DB/Hex")]
     public class HexDB : SerializedScriptableObject
     {
-        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout), HideReferenceObjectPicker]
-        //[ReadOnly]
-        public Dictionary<Vector3Int, HexData> hexDataBase = new();
+        [DictionaryDrawerSettings(KeyLabel = "Cube Coordinates", ValueLabel ="Hex Data")]
+        [HideReferenceObjectPicker]
+        [ReadOnly]
+        public Dictionary<Hex, HexData> hexDataBase = new();
 
 
 
@@ -31,29 +32,11 @@ namespace ProjectHex
 
         public Dictionary<TileBase, TileType> tileTypeDictionary = new();
 
-        public Vector2Int[] evenRowNeighborOffset { get; private set; } = new Vector2Int[] {
-            new Vector2Int(1, 0),
-            new Vector2Int(0, -1),
-            new Vector2Int(-1, -1),
-            new Vector2Int(-1, 0),
-            new Vector2Int(-1, 1),
-            new Vector2Int(0, 1),
-
-        };
-        public Vector2Int[] oddRowNeighborOffset { get; private set; } = new Vector2Int[]{
-            new Vector2Int(1, 0),
-            new Vector2Int(1, -1),
-            new Vector2Int(0, -1),
-            new Vector2Int(-1, 0),
-            new Vector2Int(0, 1),
-            new Vector2Int(1, 1),
-        };
-
         #endregion
 
-        public void AddNewHex(Vector3Int coords)
+        public void AddNewHex(Hex hex)
         {
-            hexDataBase.Add(coords, SetHexData(coords));
+            hexDataBase.Add(hex, SetHexData(ExtensionMethods.CubeToOffset(hex)));
         }
 
 
@@ -95,7 +78,7 @@ namespace ProjectHex
         private TileBonusFinal CalculateTileBonus(TileType type, Vector3Int coords)
         {
             TileBonusFinal newFinalBonus;
-            newFinalBonus = GetTileBonusSelf(GetTileData(type).self) + GetTileBonusOthers(coords);
+            newFinalBonus = GetTileBonusSelf(GetTileData(type).self) + GetTileBonusOthers(ExtensionMethods.OffsetToCube(coords));
 
 
             return ClampTileBonus(newFinalBonus, MapManager.Instance.tileBonusFinalMin, MapManager.Instance.tileBonusFinalMax);
@@ -114,17 +97,16 @@ namespace ProjectHex
             return tempTileBonus;
         }
 
-        private TileBonusFinal GetTileBonusOthers(Vector3Int coords)
+        private TileBonusFinal GetTileBonusOthers(Hex hex)
         {
             TileBonusFinal otherBonus = new();
-            List<Vector3Int> neighborCoords = GetNeighborsCoords(coords);
 
-            foreach (Vector3Int pos in neighborCoords)
+            foreach (Hex n in ExtensionMethods.GetNeighbors(hex))
             {
-                if (MapManager.Instance.tileTM.GetTile(pos) != null)
+                if (MapManager.Instance.tileTM.GetTile(ExtensionMethods.CubeToOffset(n)) != null)
                 {
                     
-                    otherBonus += GetTileData(GetTileType(pos)).other;
+                    otherBonus += GetTileData(GetTileType(ExtensionMethods.CubeToOffset(n))).other;
                 }
             }
 
@@ -154,26 +136,6 @@ namespace ProjectHex
         {
             MapManager.Instance.tileDB.tileDataBase.TryGetValue(type, out MyTileData tileData);
             return tileData;
-        }
-        
-        private List<Vector3Int> GetNeighborsCoords(Vector3Int coords)
-        {
-            List<Vector3Int> neighborCoords = new();
-            if (coords.y % 2 == 0)
-            {
-                foreach (Vector2Int offset in evenRowNeighborOffset)
-                {
-                    neighborCoords.Add(new Vector3Int(coords.x + offset.x, coords.y + offset.y, 0));
-                }
-            }
-            else
-            {
-                foreach (Vector2Int offset in oddRowNeighborOffset)
-                {
-                    neighborCoords.Add(new Vector3Int(coords.x + offset.x, coords.y + offset.y, 0));
-                }
-            }
-            return neighborCoords;
         }
         #endregion
 
