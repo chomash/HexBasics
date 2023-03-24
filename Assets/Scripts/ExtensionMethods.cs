@@ -7,30 +7,30 @@ namespace ProjectHex
     public static class ExtensionMethods
     {
 
-        public static Vector3Int CubeToOffset(Hex hex)
+        public static Vector3Int CubeToOffset(QRS hex)
         {
             int x = hex.q + (hex.r + (hex.r & 1)) / 2; // &1 is BITWISE AND, used to detect evens and odds
             int y = hex.r;
             return new Vector3Int(x, y, 0);
         }
 
-        public static Hex OffsetToCube(Vector3Int coords)
+        public static QRS OffsetToCube(Vector3Int coords)
         {
             int q = coords.x - (coords.y + (coords.y & 1)) / 2; // &1 is BITWISE AND, used to detect evens and odds
             int r = coords.y;
-            return new Hex(q, r, -q - r);
+            return new QRS(q, r, -q - r);
         }
 
-        public static List<Hex> GetNeighbors(Hex hex)
+        public static List<QRS> GetNeighbors(QRS hex)
         {
-            List<Hex> neighbour = new List<Hex>();
-            Hex[] offset = new Hex[] {
-                new Hex(1, -1, 0),
-                new Hex(1, 0, -1),
-                new Hex(0, 1, -1),
-                new Hex(-1, 1, 0),
-                new Hex(-1, 0, 1),
-                new Hex(0, -1, 1)
+            List<QRS> neighbour = new List<QRS>();
+            QRS[] offset = new QRS[] {
+                new QRS(1, -1, 0),
+                new QRS(1, 0, -1),
+                new QRS(0, 1, -1),
+                new QRS(-1, 1, 0),
+                new QRS(-1, 0, 1),
+                new QRS(0, -1, 1)
             };
 
             foreach (var n in offset)

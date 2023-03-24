@@ -21,7 +21,7 @@ namespace ProjectHex
         [DictionaryDrawerSettings(KeyLabel = "Cube Coordinates", ValueLabel ="Hex Data")]
         [HideReferenceObjectPicker]
         [ReadOnly]
-        public Dictionary<Hex, HexData> hexDataBase = new();
+        public Dictionary<QRS, HexData> hexDataBase = new();
 
 
 
@@ -34,7 +34,7 @@ namespace ProjectHex
 
         #endregion
 
-        public void AddNewHex(Hex hex)
+        public void AddNewHex(QRS hex)
         {
             hexDataBase.Add(hex, SetHexData(ExtensionMethods.CubeToOffset(hex)));
         }
@@ -97,11 +97,11 @@ namespace ProjectHex
             return tempTileBonus;
         }
 
-        private TileBonusFinal GetTileBonusOthers(Hex hex)
+        private TileBonusFinal GetTileBonusOthers(QRS hex)
         {
             TileBonusFinal otherBonus = new();
 
-            foreach (Hex n in ExtensionMethods.GetNeighbors(hex))
+            foreach (QRS n in ExtensionMethods.GetNeighbors(hex))
             {
                 if (MapManager.Instance.tileTM.GetTile(ExtensionMethods.CubeToOffset(n)) != null)
                 {

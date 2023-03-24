@@ -8,7 +8,7 @@ namespace ProjectHex
     {
         void Start()
         {
-            foreach(var my in ExtensionMethods.GetNeighbors(new Hex(-2, 0, 2)))
+            foreach(var my in ExtensionMethods.GetNeighbors(new QRS(-2, 0, 2)))
             {
                 Debug.Log($"Q: {my.q}  | R: {my.r}  | S: {my.s}");
             }
