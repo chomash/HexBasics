@@ -1,41 +1,5 @@
 {
-  "Water": {
-    "offset": -1,
-    "self": {
-      "nature": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "sun": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "water": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "punk": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      }
-    },
-    "other": {
-      "nature": 0,
-      "sun": 0,
-      "water": 0,
-      "punk": 0
-    },
-    "tileSpritePath": "Assets/Art/Sprites/Tiles/water.png"
-  },
-  "Beach": {
+  "Water1": {
     "offset": 0,
     "self": {
       "nature": {
@@ -69,46 +33,10 @@
       "water": 0,
       "punk": 0
     },
-    "tileSpritePath": "Assets/Art/Sprites/Tiles/beach.png"
-  },
-  "Plain": {
-    "offset": 0,
-    "self": {
-      "nature": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "sun": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "water": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      },
-      "punk": {
-        "x": 0,
-        "y": 0,
-        "magnitude": 0.0,
-        "sqrMagnitude": 0
-      }
-    },
-    "other": {
-      "nature": 0,
-      "sun": 0,
-      "water": 0,
-      "punk": 0
-    },
-    "tileSpritePath": "Assets/Art/Sprites/Tiles/plains.png"
+    "tileSpritePath": "Assets/Art/Sprites/Tiles/water 1.png"
   },
   "Forest": {
-    "offset": 0,
+    "offset": 4,
     "self": {
       "nature": {
         "x": 0,
@@ -143,8 +71,152 @@
     },
     "tileSpritePath": "Assets/Art/Sprites/Tiles/forest.png"
   },
-  "Mountain": {
+  "Field": {
+    "offset": 3,
+    "self": {
+      "nature": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "sun": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "water": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "punk": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    "other": {
+      "nature": 0,
+      "sun": 0,
+      "water": 0,
+      "punk": 0
+    },
+    "tileSpritePath": "Assets/Art/Sprites/Tiles/field.png"
+  },
+  "Plain": {
+    "offset": 2,
+    "self": {
+      "nature": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "sun": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "water": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "punk": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    "other": {
+      "nature": 0,
+      "sun": 0,
+      "water": 0,
+      "punk": 0
+    },
+    "tileSpritePath": "Assets/Art/Sprites/Tiles/plains.png"
+  },
+  "Beach": {
+    "offset": 1,
+    "self": {
+      "nature": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "sun": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "water": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "punk": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    "other": {
+      "nature": 0,
+      "sun": 0,
+      "water": 0,
+      "punk": 0
+    },
+    "tileSpritePath": "Assets/Art/Sprites/Tiles/beach.png"
+  },
+  "Water2": {
     "offset": 0,
+    "self": {
+      "nature": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "sun": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "water": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      },
+      "punk": {
+        "x": 0,
+        "y": 0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0
+      }
+    },
+    "other": {
+      "nature": 0,
+      "sun": 0,
+      "water": 0,
+      "punk": 0
+    },
+    "tileSpritePath": "Assets/Art/Sprites/Tiles/water_2.png"
+  },
+  "Mountain": {
+    "offset": 5,
     "self": {
       "nature": {
         "x": 0,

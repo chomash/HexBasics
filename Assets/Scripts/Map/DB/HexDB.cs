@@ -26,7 +26,7 @@ namespace ProjectHex
 
         #region
         public enum ResourceType { None, RawFood, Food, Junk, Energy, Tea }
-        public enum TileType { Water, Beach, Plain, Forest, Mountain, Swamp }
+        public enum TileType { Water1, Water2, Beach, Plain, Field, Forest, Mountain, Swamp }
         public enum BuildingType { Main, Addition, Special, Undefined }
 
         public Dictionary<TileBase, TileType> tileTypeDictionary = new();

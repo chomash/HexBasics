@@ -16,10 +16,12 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 21300000, guid: dfa96500544551d48aebd21bf705b3b5, type: 3}
-    - {fileID: 21300000, guid: 3aebf2585db68cc4eb42eb313244531e, type: 3}
-    - {fileID: 21300000, guid: cb26305f0d1eb0344bd09f37a8b41015, type: 3}
+    - {fileID: 21300000, guid: 510ac7d2dfafa0246820ff6ed427fb84, type: 3}
     - {fileID: 21300000, guid: bf602aeabc72e9d47a5efd8ff22e014e, type: 3}
+    - {fileID: 21300000, guid: be076ac26a889924abca0a6241ab4f06, type: 3}
+    - {fileID: 21300000, guid: cb26305f0d1eb0344bd09f37a8b41015, type: 3}
+    - {fileID: 21300000, guid: 3aebf2585db68cc4eb42eb313244531e, type: 3}
+    - {fileID: 21300000, guid: 0e4877be48e0d3d40969f463419d92d8, type: 3}
     - {fileID: 21300000, guid: b8b4480d89b27e14ea1bcb0305f9eb70, type: 3}
     - {fileID: 21300000, guid: 7a1cde06df6120440bba4e3c7e25c857, type: 3}
     SerializedBytesString: 
@@ -46,7 +48,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 8
     - Name: 
       Entry: 7
       Data: 
@@ -61,7 +63,7 @@ MonoBehaviour:
       Data: 0
     - Name: offset
       Entry: 3
-      Data: -1
+      Data: 0
     - Name: self
       Entry: 7
       Data: ProjectHex.TileBonusSelf, Assembly-CSharp
@@ -136,7 +138,7 @@ MonoBehaviour:
       Data: 
     - Name: tileSpritePath
       Entry: 1
-      Data: Assets/Art/Sprites/Tiles/water.png
+      Data: Assets/Art/Sprites/Tiles/water 1.png
     - Name: 
       Entry: 8
       Data: 
@@ -148,7 +150,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 5
     - Name: $v
       Entry: 7
       Data: 3|ProjectHex.MyTileData, Assembly-CSharp
@@ -157,7 +159,7 @@ MonoBehaviour:
       Data: 1
     - Name: offset
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: self
       Entry: 7
       Data: ProjectHex.TileBonusSelf, Assembly-CSharp
@@ -232,7 +234,7 @@ MonoBehaviour:
       Data: 
     - Name: tileSpritePath
       Entry: 1
-      Data: Assets/Art/Sprites/Tiles/beach.png
+      Data: Assets/Art/Sprites/Tiles/forest.png
     - Name: 
       Entry: 8
       Data: 
@@ -244,7 +246,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 4
     - Name: $v
       Entry: 7
       Data: 4|ProjectHex.MyTileData, Assembly-CSharp
@@ -253,7 +255,7 @@ MonoBehaviour:
       Data: 2
     - Name: offset
       Entry: 3
-      Data: 1
+      Data: 3
     - Name: self
       Entry: 7
       Data: ProjectHex.TileBonusSelf, Assembly-CSharp
@@ -328,7 +330,7 @@ MonoBehaviour:
       Data: 
     - Name: tileSpritePath
       Entry: 1
-      Data: Assets/Art/Sprites/Tiles/plains.png
+      Data: Assets/Art/Sprites/Tiles/field.png
     - Name: 
       Entry: 8
       Data: 
@@ -424,7 +426,7 @@ MonoBehaviour:
       Data: 
     - Name: tileSpritePath
       Entry: 1
-      Data: Assets/Art/Sprites/Tiles/forest.png
+      Data: Assets/Art/Sprites/Tiles/plains.png
     - Name: 
       Entry: 8
       Data: 
@@ -436,7 +438,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 4
+      Data: 2
     - Name: $v
       Entry: 7
       Data: 6|ProjectHex.MyTileData, Assembly-CSharp
@@ -445,7 +447,199 @@ MonoBehaviour:
       Data: 4
     - Name: offset
       Entry: 3
-      Data: 4
+      Data: 1
+    - Name: self
+      Entry: 7
+      Data: ProjectHex.TileBonusSelf, Assembly-CSharp
+    - Name: nature
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sun
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: water
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: punk
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: other
+      Entry: 7
+      Data: ProjectHex.TileBonusOther, Assembly-CSharp
+    - Name: nature
+      Entry: 3
+      Data: 0
+    - Name: sun
+      Entry: 3
+      Data: 0
+    - Name: water
+      Entry: 3
+      Data: 0
+    - Name: punk
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tileSpritePath
+      Entry: 1
+      Data: Assets/Art/Sprites/Tiles/beach.png
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 7|ProjectHex.MyTileData, Assembly-CSharp
+    - Name: tileSprite
+      Entry: 10
+      Data: 5
+    - Name: offset
+      Entry: 3
+      Data: 0
+    - Name: self
+      Entry: 7
+      Data: ProjectHex.TileBonusSelf, Assembly-CSharp
+    - Name: nature
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sun
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: water
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: punk
+      Entry: 7
+      Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: other
+      Entry: 7
+      Data: ProjectHex.TileBonusOther, Assembly-CSharp
+    - Name: nature
+      Entry: 3
+      Data: 0
+    - Name: sun
+      Entry: 3
+      Data: 0
+    - Name: water
+      Entry: 3
+      Data: 0
+    - Name: punk
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tileSpritePath
+      Entry: 1
+      Data: Assets/Art/Sprites/Tiles/water_2.png
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 8|ProjectHex.MyTileData, Assembly-CSharp
+    - Name: tileSprite
+      Entry: 10
+      Data: 6
+    - Name: offset
+      Entry: 3
+      Data: 5
     - Name: self
       Entry: 7
       Data: ProjectHex.TileBonusSelf, Assembly-CSharp
@@ -532,16 +726,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 5
+      Data: 7
     - Name: $v
       Entry: 7
-      Data: 7|ProjectHex.MyTileData, Assembly-CSharp
+      Data: 9|ProjectHex.MyTileData, Assembly-CSharp
     - Name: tileSprite
       Entry: 10
-      Data: 5
+      Data: 7
     - Name: offset
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: self
       Entry: 7
       Data: ProjectHex.TileBonusSelf, Assembly-CSharp
