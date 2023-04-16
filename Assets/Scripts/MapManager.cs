@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using ProjectHex.UI;
-using ProjectHex.Map;
-using ProjectHex.Map.Building;
-using ProjectHex.Map.Tiles;
+using UnityEditor.Rendering;
 
 namespace ProjectHex
 {
@@ -17,7 +14,9 @@ namespace ProjectHex
         #region references
         // these TM are odd-r, growing top-right
         [FoldoutGroup("Tile Maps", false)]
-        [Required] public Tilemap tileTM, buildingTM, overlayTM;
+        [Required, SerializeField] private GameObject TMContainer;
+        [FoldoutGroup("Tile Maps", false)]
+        [Required] public Tilemap tileTM, buildingTM, corruptionTM;
 
         [FoldoutGroup("DataBase", false)]
         public TileDB tileDB;
@@ -28,20 +27,18 @@ namespace ProjectHex
         [FoldoutGroup("DataBase", false)]
         public BuildingDB _buildingDB;
 
-        [InfoBox("Use with Caution! This will change how building bonuses are calculated. Default value is: 1")]
-        public float maximumTileBonusCoefficient = 1f; // for simplicity sake, do not touch
-        public TileBase overlayTile; //how overlay should look
+
 
         [FoldoutGroup("TileBonusClamp", false)]
         
-        [HorizontalGroup("TileBonusClamp/1", LabelWidth = 200)]
+        [HorizontalGroup("TileBonusClamp/1")]
         public  int tileBonusFinalMin = 0;
-        [HorizontalGroup("TileBonusClamp/1", LabelWidth = 200)]
+        [HorizontalGroup("TileBonusClamp/1")]
         public  int tileBonusFinalMax = 10;
 
-        [HorizontalGroup("TileBonusClamp/2", LabelWidth = 200)]
+        [HorizontalGroup("TileBonusClamp/2")]
         public int tileBonusOtherMin = -2;
-        [HorizontalGroup("TileBonusClamp/2", LabelWidth = 200)]
+        [HorizontalGroup("TileBonusClamp/2")]
         public int tileBonusOtherMax = 4;
 
     
@@ -54,6 +51,11 @@ namespace ProjectHex
             cleanStart = true;
             GenerateWorld();
         }
+
+        [InfoBox("Use with Caution! This will change how building bonuses are calculated. Default value is: 1")]
+        public float maximumTileBonusCoefficient = 1f; // for simplicity sake, do not touch
+        public float offsetMulti = 0.1f;
+        public GameObject hexContainer;
         #endregion
 
         private void Awake()
@@ -65,7 +67,7 @@ namespace ProjectHex
         {
             GenerateWorld();
             cleanStart = false;
-
+            TMContainer.SetActive(false);
         }
 
         void Update()
@@ -87,6 +89,7 @@ namespace ProjectHex
                 _hexDB.hexDataBase.Clear();
                 _buildingDB.buildingDataBase.Clear();
                 Initialize();
+
             }
         }
 
@@ -99,12 +102,12 @@ namespace ProjectHex
                     Vector3Int coords = new Vector3Int(x, y, 0);
                     if (tileTM.GetTile(coords) != null)
                     {
-                        _hexDB.AddNewHex(ExtensionMethods.OffsetToCube(coords));
+                        _hexDB.AddNewHex(coords.ToCube());
                     }
                 }
             }
 
-            UpdateProduction();
+            //UpdateProduction();
         }
 
         private void UpdateProduction()
@@ -112,7 +115,7 @@ namespace ProjectHex
             foreach(var kvp in _buildingDB.buildingDataBase)
             {
 
-                kvp.Value.UpdateProduction(_hexDB.hexDataBase[ExtensionMethods.OffsetToCube(kvp.Key)].finalBonus);
+                kvp.Value.UpdateProduction(_hexDB.hexDataBase[ExtensionMethods.ToCube(kvp.Key)].finalBonus);
             }
         }
 
@@ -120,15 +123,15 @@ namespace ProjectHex
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3Int gridPosition = tileTM.WorldToCell(mousePosition);
 
-                _hexDB.hexDataBase.TryGetValue(ExtensionMethods.OffsetToCube(gridPosition), out HexData value);
+                //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                
 
-                UI_Manager.Instance.ShowHexInfo(value, gridPosition);
 
-                HighlightNeighbours(gridPosition);
-                Debug.Log(gridPosition);
+                //UI_Manager.Instance.ShowHexInfo(value, gridPosition);
+
+                //HighlightNeighbours(gridPosition);
+                //Debug.Log(gridPosition);
             }
         }
         private void OnMouseOver()
@@ -139,8 +142,7 @@ namespace ProjectHex
 
             if (overTile != null)
             {
-                overlayTM.ClearAllTiles();
-                overlayTM.SetTile(gridPosition, overlayTile);
+
             }
 
         }
@@ -161,11 +163,11 @@ namespace ProjectHex
 
         private void HighlightNeighbours(Vector3Int coords)
         {
-            foreach (var n in ExtensionMethods.GetNeighbors(ExtensionMethods.OffsetToCube(coords)))
+            foreach (var n in coords.ToCube().GetNeighbors())
             {
-                if (tileTM.GetTile(ExtensionMethods.CubeToOffset(n)) != null)
+                if (tileTM.GetTile(ExtensionMethods.ToOffset(n)) != null)
                 {
-                    overlayTM.SetTile(ExtensionMethods.CubeToOffset(n), overlayTile);
+                    
                 }
             }
         }

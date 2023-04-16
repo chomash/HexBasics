@@ -2,11 +2,10 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ProjectHex.Map;
 
 
 
-namespace ProjectHex.UI
+namespace ProjectHex
 {
     public class UI_Manager : MonoBehaviour
     {

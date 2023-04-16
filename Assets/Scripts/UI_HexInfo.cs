@@ -6,14 +6,11 @@ using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using Sirenix.OdinInspector;
 using System.Linq.Expressions;
-using ProjectHex.Map;
-using ProjectHex.Map.Building;
-using ProjectHex.Map.Tiles;
 using Unity.VisualScripting;
 using System.Runtime.CompilerServices;
 
 //using UnityEngine.UIElements;
-namespace ProjectHex.UI
+namespace ProjectHex
 {
     public class UI_HexInfo : MonoBehaviour
     {

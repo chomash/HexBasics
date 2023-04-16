@@ -6,9 +6,9 @@
       "RawFood": {
         "baseAmount": 5,
         "tileBonusEfficiency": {
-          "nature": 0.48,
-          "sun": 0.13,
-          "water": 0.1,
+          "nature": 0.0,
+          "sun": 0.0,
+          "water": 0.0,
           "punk": 0.0,
           "corruption": 0.0
         }
@@ -17,14 +17,14 @@
         "baseAmount": 4,
         "tileBonusEfficiency": {
           "nature": 0.0,
-          "sun": 0.42,
-          "water": 0.12,
+          "sun": 0.0,
+          "water": 0.0,
           "punk": 0.0,
           "corruption": 0.0
         }
       }
     },
-    "tileBasePath": "Assets/Art/TileMaps/buildings/farmBuilding2.asset"
+    "tileBasePath": ""
   },
   "energyBuilding1": {
     "buildingName": "Solar Panels",
@@ -34,14 +34,14 @@
         "baseAmount": 6,
         "tileBonusEfficiency": {
           "nature": 0.0,
-          "sun": 0.58,
-          "water": 0.14,
+          "sun": 0.0,
+          "water": 0.0,
           "punk": 0.0,
           "corruption": 0.0
         }
       }
     },
-    "tileBasePath": "Assets/Art/TileMaps/buildings/energyBuilding1.asset"
+    "tileBasePath": "Assets/Art/Sprites/River/3a1.png"
   },
   "farmPlains1": {
     "buildingName": "Farm Fields",
@@ -50,15 +50,15 @@
       "RawFood": {
         "baseAmount": 1,
         "tileBonusEfficiency": {
-          "nature": 0.66,
-          "sun": 0.55,
-          "water": 0.2,
+          "nature": 0.0,
+          "sun": 0.0,
+          "water": 0.0,
           "punk": 0.0,
           "corruption": 0.0
         }
       }
     },
-    "tileBasePath": "Assets/Art/TileMaps/buildings/farmPlains1.asset"
+    "tileBasePath": ""
   },
   "foodBuilding1": {
     "buildingName": "Kitchen",
@@ -67,14 +67,14 @@
       "Food": {
         "baseAmount": 6,
         "tileBonusEfficiency": {
-          "nature": 0.05,
-          "sun": 0.24,
-          "water": 0.08,
-          "punk": 0.26,
+          "nature": 0.0,
+          "sun": 0.0,
+          "water": 0.0,
+          "punk": 0.0,
           "corruption": 0.0
         }
       }
     },
-    "tileBasePath": "Assets/Art/TileMaps/buildings/foodBuilding1.asset"
+    "tileBasePath": ""
   }
 }
