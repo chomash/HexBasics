@@ -48,6 +48,7 @@ namespace ProjectHex
             HexData newHexData = new();
             newHexData.type = GetTileType(coords);
             newHexData.finalBonus = CalculateTileBonus(newHexData.type, coords);
+
             //newHexData.buildingReference = SetBuildingRef(coords);
             //newHexData.isBuilt = newHexData.buildingReference != new Vector3Int(666, 666, 666) ? true : false;
             //if (newHexData.isBuilt)
@@ -56,23 +57,23 @@ namespace ProjectHex
             return newHexData;
         }
 
-        private void TryCreateBuilding(Vector3Int buildingKey)
-        {
-            string templateKey = MapManager.Instance.buildingTM.GetTile(buildingKey).name;
-            MapManager.Instance._buildingDB.AddBuilding(buildingKey, templateKey);
-        }
+        //private void TryCreateBuilding(Vector3Int buildingKey)
+        //{
+        //    string templateKey = MapManager.Instance.buildingTM.GetTile(buildingKey).name;
+        //    MapManager.Instance._buildingDB.AddBuilding(buildingKey, templateKey);
+        //}
 
-        private Vector3Int SetBuildingRef(QRS coords)
-        {
-            if (MapManager.Instance.buildingTM.GetTile(coords.ToOffset()) != null)
-            {
-                return coords.ToOffset();
-            }
-            else
-            {
-                return new Vector3Int(666, 666, 666);
-            }
-        }
+        //private Vector3Int SetBuildingRef(QRS coords)
+        //{
+        //    if (MapManager.Instance.buildingTM.GetTile(coords.ToOffset()) != null)
+        //    {
+        //        return coords.ToOffset();
+        //    }
+        //    else
+        //    {
+        //        return new Vector3Int(666, 666, 666);
+        //    }
+        //}
 
         private void SpawnHex(QRS coords)
         {
@@ -81,20 +82,23 @@ namespace ProjectHex
             hex.transform.SetParent(MapManager.Instance.hexContainer.transform);
             
             MyTileData temp = MapManager.Instance.tileDB.tileDataBase[hexDataBase[coords].type];
-            TileGO hexRef = hex.GetComponent<TileGO>();
-            
+            TileGO hexRef = hex.GetComponent<TileGO>();   
             hexRef.SetOffset(temp.offset*MapManager.Instance.offsetMulti);
             hexRef.SetBaseTile(temp.tileSprite);
             hexRef.SetCoords(coords);
+            
             hexDataBase[coords].gameObjectReference = hex;
+            hexRef.CheckForCorruption();//to reDO
+
 
         }
+
 
         #region Tile functions
         private TileBonusFinal CalculateTileBonus(TileType type, QRS coords)
         {
             TileBonusFinal newFinalBonus;
-            newFinalBonus = GetTileBonusSelf(GetTileData(type).self) + GetTileBonusOthers(ExtensionMethods.ToCube(coords.ToOffset()));
+            newFinalBonus = GetTileBonusSelf(GetTileData(type).self) + GetTileBonusOthers(coords);
 
 
             return ClampTileBonus(newFinalBonus, MapManager.Instance.tileBonusFinalMin, MapManager.Instance.tileBonusFinalMax);

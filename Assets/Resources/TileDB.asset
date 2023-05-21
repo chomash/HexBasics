@@ -24,6 +24,13 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 0e4877be48e0d3d40969f463419d92d8, type: 3}
     - {fileID: 21300000, guid: b8b4480d89b27e14ea1bcb0305f9eb70, type: 3}
     - {fileID: 21300000, guid: 7a1cde06df6120440bba4e3c7e25c857, type: 3}
+    - {fileID: 11400000, guid: 4f6afc395f118244da4dceab86b569ed, type: 2}
+    - {fileID: 21300000, guid: 22719aa6fd3c3d64fa68feb791532205, type: 3}
+    - {fileID: 11400000, guid: d34afa67009360b4a93e67584bf5b88b, type: 2}
+    - {fileID: 21300000, guid: 17de526281198d24aa128befd2720159, type: 3}
+    - {fileID: 11400000, guid: 1d5dc4977686a5744a8404272c196be2, type: 2}
+    - {fileID: 21300000, guid: efa0b4c51ee299f43aeed3a651658726, type: 3}
+    - {fileID: 11400000, guid: 99d75bb584fb33044ba67b79fa14a0e5, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -87,7 +94,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: 
       Entry: 8
       Data: 
@@ -96,10 +103,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -129,7 +136,7 @@ MonoBehaviour:
       Data: 0
     - Name: water
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: punk
       Entry: 3
       Data: 0
@@ -168,10 +175,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -183,7 +190,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -195,7 +202,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -204,10 +211,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -219,16 +226,16 @@ MonoBehaviour:
       Data: ProjectHex.TileBonusOther, Assembly-CSharp
     - Name: nature
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: sun
       Entry: 3
-      Data: 0
+      Data: -1
     - Name: water
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: punk
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -267,7 +274,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -315,13 +322,13 @@ MonoBehaviour:
       Data: ProjectHex.TileBonusOther, Assembly-CSharp
     - Name: nature
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: sun
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: water
       Entry: 3
-      Data: 0
+      Data: -1
     - Name: punk
       Entry: 3
       Data: 0
@@ -360,10 +367,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -372,10 +379,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -387,7 +394,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -414,13 +421,13 @@ MonoBehaviour:
       Data: 0
     - Name: sun
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: water
       Entry: 3
       Data: 0
     - Name: punk
       Entry: 3
-      Data: 0
+      Data: -1
     - Name: 
       Entry: 8
       Data: 
@@ -459,7 +466,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -468,10 +475,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: 
       Entry: 8
       Data: 
@@ -483,7 +490,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -495,7 +502,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -510,7 +517,7 @@ MonoBehaviour:
       Data: 0
     - Name: sun
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: water
       Entry: 3
       Data: 0
@@ -567,7 +574,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -576,10 +583,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 5
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
@@ -609,7 +616,7 @@ MonoBehaviour:
       Data: 0
     - Name: water
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: punk
       Entry: 3
       Data: 0
@@ -660,10 +667,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -675,7 +682,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -684,10 +691,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
@@ -699,16 +706,16 @@ MonoBehaviour:
       Data: ProjectHex.TileBonusOther, Assembly-CSharp
     - Name: nature
       Entry: 3
-      Data: 0
+      Data: -1
     - Name: sun
       Entry: 3
-      Data: 0
+      Data: -2
     - Name: water
       Entry: 3
-      Data: 0
+      Data: -1
     - Name: punk
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -747,7 +754,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -756,10 +763,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -768,10 +775,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -795,13 +802,13 @@ MonoBehaviour:
       Data: ProjectHex.TileBonusOther, Assembly-CSharp
     - Name: nature
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: sun
       Entry: 3
       Data: 0
     - Name: water
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: punk
       Entry: 3
       Data: 0
@@ -814,6 +821,92 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: corruptionDictionary
+      Entry: 7
+      Data: 10|System.Collections.Generic.Dictionary`2[[UnityEngine.Tilemaps.TileBase,
+        UnityEngine.TilemapModule],[UnityEngine.Sprite, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 11|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.Tilemaps.TileBase,
+        UnityEngine.TilemapModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 8
+    - Name: $v
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 10
+    - Name: $v
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 12
+    - Name: $v
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tileTypeDictionary
+      Entry: 7
+      Data: 12|System.Collections.Generic.Dictionary`2[[UnityEngine.Tilemaps.TileBase,
+        UnityEngine.TilemapModule],[ProjectHex.HexDB+TileType, Assembly-CSharp]],
+        mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 11
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 14
+    - Name: $v
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

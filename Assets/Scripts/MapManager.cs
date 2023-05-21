@@ -16,7 +16,7 @@ namespace ProjectHex
         [FoldoutGroup("Tile Maps", false)]
         [Required, SerializeField] private GameObject TMContainer;
         [FoldoutGroup("Tile Maps", false)]
-        [Required] public Tilemap tileTM, buildingTM, corruptionTM;
+        [Required] public Tilemap tileTM, corruptionTM;
 
         [FoldoutGroup("DataBase", false)]
         public TileDB tileDB;
@@ -72,12 +72,12 @@ namespace ProjectHex
 
         void Update()
         {
-            OnMouseClick();
-            //OnMouseOver();
+
         }
 
         public void GenerateWorld()
         {
+            ClearAllHexes();
             if (cleanStart)
             {
                 if (randomizeSeed)
@@ -119,34 +119,6 @@ namespace ProjectHex
             }
         }
 
-        private void OnMouseClick()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-
-                //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                
-
-
-                //UI_Manager.Instance.ShowHexInfo(value, gridPosition);
-
-                //HighlightNeighbours(gridPosition);
-                //Debug.Log(gridPosition);
-            }
-        }
-        private void OnMouseOver()
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPosition = tileTM.WorldToCell(mousePosition);
-            TileBase overTile = tileTM.GetTile(gridPosition);
-
-            if (overTile != null)
-            {
-
-            }
-
-        }
-
         private void Singleton()
         {
             if (Instance != null && Instance != this)
@@ -159,19 +131,13 @@ namespace ProjectHex
             }
         }
 
-        #region Debug Functions
-
-        private void HighlightNeighbours(Vector3Int coords)
+        public void ClearAllHexes()
         {
-            foreach (var n in coords.ToCube().GetNeighbors())
+            while(hexContainer.transform.childCount > 0)
             {
-                if (tileTM.GetTile(ExtensionMethods.ToOffset(n)) != null)
-                {
-                    
-                }
+                DestroyImmediate(hexContainer.transform.GetChild(0).gameObject);
             }
         }
-        #endregion
 
 
     }

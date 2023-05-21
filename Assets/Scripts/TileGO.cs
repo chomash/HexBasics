@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Tilemaps;
 
 namespace ProjectHex
 {
@@ -12,33 +13,45 @@ namespace ProjectHex
         public GameObject offsetGO;
         public SpriteRenderer baseRef, corruptionRef, overlayRef, buildingRef;
         public QRS coords = QRS.zero;
-        private float offset;
-        public PolygonCollider2D colli;
-
+        [SerializeField] private float animationOffset = 0.1f;
+        private float tileOffset;
+        private bool isSelected = false;
         
 
-        public void Start()
+
+        
+        public void CheckForCorruption()
         {
-            corruptionRef.enabled = false;
-            overlayRef.enabled = false;
-            buildingRef.enabled = false;
+            TileBase corr = MapManager.Instance.corruptionTM.GetTile(coords.ToOffset());
+            if (corr != null)
+            {
+                SetCorruption(MapManager.Instance.tileDB.corruptionDictionary[corr], true);
+            }
+            else
+            {
+                SetCorruption(null, false);
+            }
         }
+
+
+
+
+
 
         public void SetBaseTile(Sprite baseTileSprite)
         {
             baseRef.sprite = baseTileSprite;
         }
-
         public void SetCoords(QRS coords)
         {
             this.coords = coords;
+
         }
         public void SetOffset(float _offset)
         {
-            offset = _offset;
-            offsetGO.transform.localPosition = new Vector3(0, offset, 0);
+            tileOffset = _offset;
+            offsetGO.transform.localPosition = new Vector3(0, tileOffset, 0);
         }
-
         public void SetBuilding(Sprite buildingSprite, bool isVisible)
         {
             buildingRef.sprite = buildingSprite;
@@ -54,8 +67,18 @@ namespace ProjectHex
         
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log("Click!");
-            offsetGO.transform.localPosition = new Vector3(0, offset+0.3f, 0);
+            if (isSelected)
+            {
+                isSelected = false;
+                offsetGO.transform.localPosition = new Vector3(0, tileOffset, 0);
+            }
+            else
+            {
+                isSelected= true;
+                UI_Manager.Instance.ShowHexInfo(MapManager.Instance._hexDB.hexDataBase[coords], coords.ToOffset());
+                offsetGO.transform.localPosition = new Vector3(0, tileOffset + animationOffset, 0);
+            }
+
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -66,7 +89,7 @@ namespace ProjectHex
         public void OnPointerExit(PointerEventData eventData)
         {
             overlayRef.enabled = false;
-            offsetGO.transform.localPosition = new Vector3(0, offset, 0);
+            offsetGO.transform.localPosition = new Vector3(0, tileOffset, 0);
         }
 
     }

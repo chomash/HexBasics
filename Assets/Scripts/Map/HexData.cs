@@ -15,7 +15,9 @@ namespace ProjectHex
         [HideInInspector] public bool isBuilt = false;
         [ShowIf("isBuilt")] public Vector3Int buildingReference;
         public GameObject gameObjectReference;
-        //corruption
+        
+        [Range(-2,6)]
+        public int corruption;
 
 
 

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
+using UnityEngine.Tilemaps;
+using static ProjectHex.HexDB;
 
 #pragma warning disable 0414 //disable 'showSave not in use' warning
 namespace ProjectHex
@@ -16,6 +18,10 @@ namespace ProjectHex
      
         [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.ExpandedFoldout), PropertyOrder(10), HideReferenceObjectPicker]
         public Dictionary<HexDB.TileType, MyTileData> tileDataBase = new();
+        [PropertyOrder(10), HideReferenceObjectPicker]
+        public Dictionary<TileBase, Sprite> corruptionDictionary = new(); //corruption needs rework
+        [PropertyOrder(10), HideReferenceObjectPicker]
+        public Dictionary<TileBase, TileType> tileTypeDictionary = new();
 
         #region Save & Load
         private static string directory = "/Resources/json/";
